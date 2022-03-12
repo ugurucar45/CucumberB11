@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/com.weborder/Order.feature",//this is path for feature files    //contentroot
+        features = "src/test/resources/features/com.weborder",//this is path for feature files    //contentroot
         glue = "stepdefinitions/webordersteps",       //this is path for step definitions   //sourceroot
         dryRun = false  //
 )

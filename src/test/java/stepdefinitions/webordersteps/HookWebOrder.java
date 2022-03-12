@@ -11,7 +11,7 @@ public class HookWebOrder {
     }
     @After
     public void afterScenario(){
-//        DriverHelper.tearDown();
+        DriverHelper.tearDown();
         System.out.println("it runs after eachScenario");
     }
 
