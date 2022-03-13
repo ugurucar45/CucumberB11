@@ -1,0 +1,18 @@
+CUCUMBER
+3/12/2022
+Cucumber
+Why is it important
+how we use cucumber
+where we use cucumber
+Cucumber key words(When, Then, And, Given,but,*)-->Feature, Scenario
+How to create a cucumber framework:
+-->POM(dependency)-->Cucumber-Java, Cucumber-junit,webdriverManager,Selenium,Junit
+-->Pages
+-->Runners
+-->StepDefinitions
+--->Features(under resources)
+-->utils(Browser utils, DriverHelper,ConfigReader)
+-->configuration.properties
+Background:
+We use background keyword to run step/steps before each scenario(it is kinda beforeMethod annotation from testng).
+(it is used in the feature file.)
