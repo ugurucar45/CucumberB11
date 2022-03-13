@@ -1,4 +1,4 @@
-@regression
+@special
 Feature: Etsy Search Functionality
   Background:
     Given the user navigates to "https://www.etsy.com/"
