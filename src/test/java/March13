@@ -1,0 +1,60 @@
+3/13/2022
+Sunday
+TestNG Framework
+-->POM
+-->Pages
+-->Tests
+-->Runners -->Runner.xml
+-->Utils
+-->TestBase
+-->Configuration.properties
+-->ScreenShot
+-->DataProvider
+-->Parameters
+-->invocationCount(how many times you want to run your test)
+-->priority
+-->BeforeMethod - AfterMethod
+-->Aftersuite,beforesuite,beforeClass,AfterClass, Aftertest,BeforeTest
+-->Test
+-->testNG Report
+-->Singleton Pattern
+Cucumber-Junit Framework
+-->POM
+-->Pages
+-->Step Definitions *
+-->Runners -->Runner.class
+-->Utils
+-->Hook class *
+-->Configuration.properties
+-->ScreenShot
+-->Scenario Outline
+-->Background for featureFile -->@After and @Before
+-->@BeforeStep,@AfterStep
+-->Steps(When,Then,And,But,*,Given) *
+-->Cucumber report, HTML report
+-->Singleton Pattern
+Hook class:-->it stores your @Before and @After annotation method.
+            -->@Before -->we use navigation to website or initiliazing your webdriver
+            -->@After -->We tear down the driver under this. WE TAKE SCREENSHOT UNDER THIS ANNOTATION.
+           NOTE:I would definitely store my hook class under the step definition package of project.(Webordersteps-->Hook)
+Background-->this is the way to reduce amount of code and increase the efficiency of your code.
+          -->it acts like a before method annotation. It means it runs before steps of scenario
+Runner--> Runner class is a way to centralize your scenarios and control from here.
+          -->We have some annotations and key words belong to this runner class
+          -->@RunWith(Cucumber.class)
+          --->@CucumberOptions-->it is a way to control your scenarios(with the some key words)
+             -->Features:"Content root path"-->you need to provide the location of your features/feature file.
+                                   src/test/resources/features/com.weborder
+             -->Glue:"Source root path" delete the .java part at the end -->you need to provide the location of stepdefinitions class.
+                                   stepdefinitions/webordersteps
+             -->DryRun:true/false --> Once you make the dryRun true-->it will give you the unimplemented steps snipps without running your whole steps from feature* easiest and quickest way to get snips
+             NOTE: After you are done with snips, DO NOT FORGET TO MAKE IT FALSE AGAIN. OTHERWISE IT WILL BE ACTING LIKE ASSERT.ALL statement.IT MEANS it will all the time pass.
+             --->TAGS: We user tags to execute the scenarios in organized ways.(filtration).We can organize our user stories,tests cases,smoke tests,regression test by using tags in cucumber.
+          *We can use the tags in feature file level or for each scenario(it means you can use everywhere in feature file.)
+          *In the runner class we need to use tags attribute to give the values for tags.
+          Examples: tags="@smoke"-->it will run only @smoke tags scenarios
+                    tags="@smoke and @regression"-->it will run @smoke and @regression tags scenario
+                    tags="@smoke or @special"-->it will run either @smoke tags scenario or @special tags scenario
+                    tags="@regression and @ahmet and not @testCase1"-->it will run @regression and @ahmet tags but not included the @testCase1 tags for the scenario.
+           Scenario Outline/Scenario Template (This is basically same logic of DATA PROVIDER FROM TESTNG)
+           I am using scenario outline to execute the same scenario with different set of data.(same logic of data provider).Once we use the Scenario outline we need to have examples table.

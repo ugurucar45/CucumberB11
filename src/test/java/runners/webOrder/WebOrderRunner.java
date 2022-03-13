@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/com.weborder",//this is path for feature files    //contentroot
         glue = "stepdefinitions/webordersteps",       //this is path for step definitions   //sourceroot
         dryRun = false,  //
-        tags="@regression and @smoke and not @tc1"
+        tags="@loginPageOutline"
 )
 
 public class WebOrderRunner {
