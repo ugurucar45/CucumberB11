@@ -1,0 +1,17 @@
+3/14/2022
+Monday
+Runner:
+   Tags--> I need to use tags keyword under the Cucumber options to be able to filtrate my scenarios.
+    *Tags must be inside of the feature file
+    *Tags can be anywhere you want.(above feature, above scenario, above Background,above Scenario Outline)
+    *We have a different version of the tags:
+    "@regression" ,
+    "@regression and @smoke",
+    "@regression or @special",
+    "@special and @regression and not @smoke"
+    Scenario Outline/Template: it is a way to execute same scenario with the different set of data multiple times.You must have examples keyword once you use Scenario Outline.
+    *To be able to connect your scenario outline data with examples data.WE USE DIAMOND FOR THE VALUES(parameters)
+      Examples:
+      |username|Password |
+      |ahmet   | ahmet123|
+      |mehmet  |mehmet123|

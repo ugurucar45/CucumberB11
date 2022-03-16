@@ -1,0 +1,39 @@
+3/15/2022
+Tuesday
+Scenario Outline/Templates: is a way to run the same test scenario with the different set of data.
+                            -->TestNg-->Data Provider
+                            -->Cucumber-Junit-->Scenario Outline
+Note:* Scenario Outline must have Examples table
+Note2*:To be able to connect examples table with the parameters in feature file. We put diamond bracket.
+Exceptions:
+-->FeatureParserException: it means you have a synthax issue in your feature file (feature keyword is missing ":")
+-->NoSuchElementException: it means you need to check your xpath.(or check your previous step and watch what is going on with your codes)
+    *Check Iframe
+    *Check windowhandle
+    *If it is not on the view (it means go and scrooldown)
+    *You can also put thread.sleep
+-->NullPointerException : either I didn't initiliaze the driver or page class etc.
+                        *I need to check my driver where it is pointing or initiliazed or not
+                        *I need to check my pages are initiliazed.
+-->StaleElementException:You get this exception once your element/page is disappeared,refreshed,updated....etc
+*Thread.sleep(2000)
+*Initiliaze the webelement or page one more time to load your driver with specified elements
+--> TimeOutException==>When we use explicity wait, it will throw the timeoutexception if it can not find the element within given time.
+   Note:I would definitely check the xpath of the element.
+-->ElementIsNotInteractableException-->you are trying to click the element is not clickable.
+  Note: I would try different click methods (like JS).(and the elements has "a" tag or go above or below the path.)
+FAQ:
+  1)I am running my feature file but it is not running at all.
+  -Driver not initiliazed(check your hook class)
+  -Feature file path might be wrong(check your feature path and glue path)
+  -Unimplemented step
+  -Make sure dry run is false
+  2)I am running feature file even though I implemented the steps still getting unimplemented steps exception?
+  -Check file path for specifically glue
+  -Check your whole synthax of steps
+  3)I implemented the step but cucumber feature file still has yellow highlighted.
+  -Make sure text in feature file step is same with the text in step definition class.
+  4) I use  the ConfigReader to read some properties from properties file, it is giving me configreader property cannot be null.(error)
+  DATA TABLE:
+    is table with data to pass for a specific step.It is like Parameters in TESTNG
+    *We can use data table to store our multiple data in good format. We can store our data as list, as map
