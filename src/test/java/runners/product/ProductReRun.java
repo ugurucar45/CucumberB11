@@ -6,12 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/com.products",
+        features = "@target/uiFailedTests.txt",
         glue = "stepdefinitions/productsteps",
         dryRun = false,
         tags = "@productOutline",
         plugin={"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
 )
-public class ProductRunner {
+public class ProductReRun {
 
 }

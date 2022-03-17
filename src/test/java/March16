@@ -1,0 +1,62 @@
+3/16/2022
+WEDNESDAY:
+Data Table: is a way to run the codes with the different data.(Parameters in TESTNG)
+Scenario Outline:is a way to run the SAME scenario with the different set of data.(DATA PROVIDER IN TESTNG)
+Feature:Testing the creation of employee
+  Scenario: creating a employee by providing information
+   Given the user is on the openmrs page
+   When the user provides information:
+     |givenName|ahmet|
+     |familyName|baldir|
+     |quantity|4|
+ INTERVIEW QUESTIONS:
+ What do you know about Cucumber and what makes cucumber special for you?
+ It is a way to collaborate between technical and nontechnical people.
+ -Gherking Language
+ -Feature Files
+ -Step Definitions
+ -Runner Class
+ -Hook Class
+ -Tags
+ What is the advantage of BDD framework?
+ -Readibility: Clear requirements written with Gherking language with plain ENGLISH.(it is useful for TESTNG)
+ -Reusability:You do not have to write a code for the same fucntions thanks to how step_definitions are created based in the scenario steps in the feature files.
+ -DDT-->Data Driven is very easy with Scenario outlines and examples table
+ -->Quick and easy set up and execution
+ -->Efficient way for testing.
+ What does "@CucumberOptions" do?
+ It is a way to connect your runner class with step definitions and feature files.
+  SHOW OFF PART:
+  It has some keys SIR/MADAM/BOSS/KING/MASTER/BRO :
+   feature:I provide the location of my feature files
+   glue:I proviode the location of my step definitions class
+   dryRun:true it will give me the unsnipped implementation
+   tags: it filtrates the scenarios
+   plugin:i put my html report and failed test script here.
+   What are the components of CUCUMBER BDD FRAMEWORK?
+   FEATURE:
+      BACKGROUND:
+      SCENARIO:
+      GIVEN
+      WHEN
+      AND
+      THEN
+      BUT
+      *
+      WHAT IS HOOK IN CUCUMBER?
+      It is a class where we store our @BEFORE and @AFTER annotations.
+      SHOW OFF :
+      I store my navigation websites in @BEFORE annotation
+      I store my TAKESCREENSHOT for failing test, TEARDOWN() in @AFTER ANNOTation
+      *It should be under the step definitions packet
+        Wheredo you implement screenshot in your cucumber Framework?
+      I store it in my Hook class inside of @After Annotation
+        What is DATATABLE in cucumber?
+       Cucumber DataTable allows us to overcome issues with a big set of data or even more we can not fit all the data into steps.
+       How do i use the cucumber scenario outline for your framework
+       I just call it inside of my feature file as Scenario Outline:
+       then I put EXAMPLES table.
+       How to run ONLY failed tests in CUCUMBER?
+       we create a rerun class with the plugin.(refer to rerun class)
+       What report do you generate in CUCUMBER?
+       I have a special plug in for it. It generates HTML report.

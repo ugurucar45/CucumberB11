@@ -5,6 +5,11 @@ Feature: Open MRS tests
     Given the user logs in to OpenMRS with following credentials
       | username | admin    |
       | password | Admin123 |
+
+
+      # | admin    |
+      # | Admin123 |
+    # eger boyle olsaydi map yerine list acardin listten get yapardin
     When the user registers a new patient with following information
       | GivenName    | Ugur       |
       | FamilyName   | Ucar       |
